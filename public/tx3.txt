@@ -1,0 +1,14 @@
+export const updateSchema = Yup.object({
+    name: Yup.string().required("Trường dữ liệu bắt buộc"),
+    original_price: Yup.string().required("Trường dữ liệu bắt buộc"),
+    mota: Yup.string().min(10, "Tối thiếu 10 ký tự").required("Trường dữ liệu bắt buộc"),
+    thuonghieu : Yup.string().min(10, "Tối thiếu 10 ký tự").required("Trường dữ liệu bắt buộc"),
+    images: Yup.array().of(
+      Yup.object().shape({
+          base_url: Yup.string(),
+      })
+  ),
+  
+  });
+  export type updateForm = Yup.InferType<typeof updateSchema>
+  import * as Yup from 'yup'
