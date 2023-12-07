@@ -24,3 +24,15 @@ const instance = axios.create({
 })
 
 export default instance
+export const getById = (id:string)=>{
+    
+    return instance.get("/products/"+id)
+}
+export const addProduct = (products:addForm)=>{
+
+    return instance.post("/products",products)
+}
+export const update = (id:string, body :updateForm)=>{
+
+    return instance.put("/products/"+id,body)
+}
